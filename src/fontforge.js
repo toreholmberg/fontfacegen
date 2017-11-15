@@ -54,6 +54,14 @@ function getName(source) {
   return false;
 }
 
+function getFamilyName(source) {
+  const result = fontforge(source, 'Open($1);Print($familyname);');
+  if (result) {
+    return result.trim();
+  }
+  return false;
+}
+
 function getWeight(source) {
   const result = fontforge(source, 'Open($1);Print($weight);');
   if (result) {
@@ -76,5 +84,6 @@ function getStyle(source) {
 
 module.exports = fontforge;
 module.exports.getName = getName;
+module.exports.getFamilyName = getFamilyName;
 module.exports.getStyle = getStyle;
 module.exports.getWeight = getWeight;

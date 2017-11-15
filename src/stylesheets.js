@@ -7,7 +7,7 @@ function css(stylesheet, name, filename, weight, style, woff2, woff, ttf) {
     `    font-family: "${name}";`,
     `    src: url(${woff2}) format("woff2"),`,
     `         url(${woff}) format("woff"),`,
-    `         url(${ttf}) format("ttf"),`,
+    // `         url(${ttf}) format("ttf"),`,
   ];
 
   resultLines.push(
@@ -25,7 +25,7 @@ function css(stylesheet, name, filename, weight, style, woff2, woff, ttf) {
 }
 
 module.exports = config => {
-  const name = config.name;
+  const name = config.family;
   const filename = (config.collate)
     ? path.join(config.css_fontpath, config.basename, config.basename)
     : path.join(config.css_fontpath, config.basename);

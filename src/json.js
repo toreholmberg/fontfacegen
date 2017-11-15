@@ -3,6 +3,7 @@ const path = require('path');
 
 module.exports = config => {
   const name = config.name;
+  const family = config.family;
   const filename = config.collate
     ? path.join(config.css_fontpath, config.basename, config.basename)
     : path.join(config.css_fontpath, config.basename);
@@ -14,10 +15,10 @@ module.exports = config => {
   const ttf = `${filename}.ttf`;
 
   const data = {
-    name,
+    family,
     weight,
     style,
-    ttf,
+    // ttf,
     woff,
     woff2,
   };

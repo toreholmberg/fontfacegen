@@ -23,6 +23,7 @@ module.exports = options => {
   _.css = [_.target, '.css'].join('');
   _.css_fontpath = '';
   _.name = fontforge.getName(_.source);
+  _.family = fontforge.getFamilyName(_.source);
   _.weight = fontforge.getWeight(_.source);
   _.style = fontforge.getStyle(_.source);
   _.embed = [];
