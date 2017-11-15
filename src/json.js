@@ -12,13 +12,11 @@ module.exports = config => {
 
   const woff2 = `${filename}.woff2`;
   const woff = `${filename}.woff`;
-  const ttf = `${filename}.ttf`;
 
   const data = {
     family,
     weight,
     style,
-    // ttf,
     woff,
     woff2,
   };

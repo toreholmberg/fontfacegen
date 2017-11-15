@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const fs = require('fs');
 const path = require('path');
 const child = require('child_process');
@@ -24,4 +26,5 @@ files.forEach((file, index) => {
   });
 });
 
-console.log(`Completed in ${(new Date() - startTime) / 1000}s. Generated to ${path.join(__dirname, destDir)}`);
+console.log(`Completed in ${(new Date() - startTime) / 1000}s.`);
+console.log(`Generated to ${path.join(__dirname, destDir)}`);

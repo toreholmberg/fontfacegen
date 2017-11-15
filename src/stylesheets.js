@@ -1,13 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
-function css(stylesheet, name, filename, weight, style, woff2, woff, ttf) {
+function css(stylesheet, name, filename, weight, style, woff2, woff) {
   const resultLines = [
     '@font-face {',
     `    font-family: "${name}";`,
     `    src: url(${woff2}) format("woff2"),`,
     `         url(${woff}) format("woff"),`,
-    // `         url(${ttf}) format("ttf"),`,
   ];
 
   resultLines.push(

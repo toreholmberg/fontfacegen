@@ -76,7 +76,7 @@ function processFont(source, dest) {
     fontfacegen({
       source,
       dest,
-      css_fontpath: '/a/path/where/fonts/live',
+      css_fontpath: '../fonts',
     });
 
     return Promise.resolve();
