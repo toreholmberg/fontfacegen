@@ -9,13 +9,19 @@ const destDir = 'generated/';
 
 child.execSync(`rm -rf ${destDir}`);
 
-fs.readdirSync(sourceDir)
-  .filter(file => ['.ttf', '.otf'].indexOf(path.extname(file)) > -1)
-  .forEach(file => {
-    const sourceFile = path.join(sourceDir, file);
-    fontfacegen({
-      source: sourceFile,
-      dest: destDir,
-      css_fontpath: '/a/path/where/fonts/live',
-    });
+const files = fs.readdirSync(sourceDir)
+  .filter(file => ['.ttf', '.otf'].indexOf(path.extname(file)) > -1);
+
+const startTime = new Date();
+
+files.forEach((file, index) => {
+  const sourceFile = path.join(sourceDir, file);
+  console.log(`Processing [${index + 1}/${files.length}]: ${sourceFile}`);
+  fontfacegen({
+    source: sourceFile,
+    dest: destDir,
+    css_fontpath: '/a/path/where/fonts/live',
   });
+});
+
+console.log(`Completed in ${(new Date() - startTime) / 1000}s. Generated to ${path.join(__dirname, destDir)}`);
