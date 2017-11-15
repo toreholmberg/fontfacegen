@@ -76,12 +76,7 @@ function processFont(source, dest) {
     fontfacegen({
       source,
       dest,
-      css_fontpath: '../fonts/',
-      css: 'tmp/dest/css/fonts.css',
-      less: 'tmp/dest/less/fonts.less',
-      scss: 'tmp/dest/scss/fonts.scss',
-      embed: ['ttf', 'woff', 'woff2', 'svg'],
-      collate: true,
+      css_fontpath: '/a/path/where/fonts/live',
     });
 
     return Promise.resolve();
