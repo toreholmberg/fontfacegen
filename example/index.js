@@ -10,7 +10,7 @@ const destDir = 'generated/';
 child.execSync(`rm -rf ${destDir}`);
 
 fs.readdirSync(sourceDir)
-  .filter(file => path.extname(file) === '.ttf')
+  .filter(file => ['.ttf', '.otf'].indexOf(path.extname(file)) > -1)
   .forEach(file => {
     const sourceFile = path.join(sourceDir, file);
     fontfacegen({
